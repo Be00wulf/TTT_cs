@@ -55,3 +55,6 @@ class ReglasJuego
         return false;
     }
 }
+
+
+//https://be00wulf.github.io/mj-ba.github.io/bitacoras/csharp/proyecto_consola.html

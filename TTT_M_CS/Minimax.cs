@@ -74,3 +74,5 @@ class Minimax
         }
     }
 }
+
+//https://be00wulf.github.io/mj-ba.github.io/bitacoras/csharp/proyecto_consola.html

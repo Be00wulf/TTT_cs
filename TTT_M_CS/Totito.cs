@@ -9,17 +9,17 @@ class Totito
     static void Main(string[] args)
     {
         ReiniciarJuego();
-        
+
         while (!juegoTerminado)
         {
             DibujarTablero();
-            
+
             // mi turno
             if (jugadorActual == 1)
             {
                 Console.WriteLine("Ingrese la fila y columna de su tiro (ej: 2 2)");
                 string[] entrada = Console.ReadLine().Split(' ');
-                
+
                 try
                 {
                     int fila = int.Parse(entrada[0]);
@@ -28,7 +28,7 @@ class Totito
                     if (ReglasJuego.CuadradoDisponible(tablero, fila, col))
                     {
                         ReglasJuego.MarcarCuadrado(tablero, fila, col, jugadorActual);
-                        
+
                         if (ReglasJuego.VerificarGanador(tablero, jugadorActual))
                         {
                             juegoTerminado = true;
@@ -60,7 +60,7 @@ class Totito
                 Console.WriteLine("Turno de la IA [X] ");
                 Tuple<int, int> movimientoIA = Minimax.MejorMovimiento(tablero);
                 ReglasJuego.MarcarCuadrado(tablero, movimientoIA.Item1, movimientoIA.Item2, jugadorActual);
-                
+
                 if (ReglasJuego.VerificarGanador(tablero, jugadorActual))
                 {
                     juegoTerminado = true;
@@ -73,7 +73,7 @@ class Totito
                     DibujarTablero();
                     Console.WriteLine("EMPATE");
                 }
-                
+
                 jugadorActual = 1;
             }
         }
@@ -110,3 +110,5 @@ class Totito
         juegoTerminado = false;
     }
 }
+
+//https://be00wulf.github.io/mj-ba.github.io/bitacoras/csharp/proyecto_consola.html
